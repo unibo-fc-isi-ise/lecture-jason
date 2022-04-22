@@ -14,7 +14,7 @@
 % version
 \newcommand{\versionmajor}{0}
 \newcommand{\versionminor}{1}
-\newcommand{\versionpatch}{0}
+\newcommand{\versionpatch}{1}
 \newcommand{\version}{\versionmajor.\versionminor.\versionpatch}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title[\currentLab{} -- \jason{}]{
@@ -1203,7 +1203,7 @@ Let's recall some important aspects concerning standard internal actions
     \item roughly speaking, unification works as follows
     %
     \begin{center}
-        \texttt{T$_1$[As$_1$] $unifies$ T$_2$[As$_2$]} $\Leftrightarrow$ $\exists \theta$ s.t. \texttt{T$_1 \theta = $T$_2 \theta\ \wedge\ $As$_1 \theta \subseteq $As$_2 \theta $}
+        \texttt{T$_1$[As$_1$] $unifies$ T$_2$[As$_2$]} $\Leftrightarrow$ $\exists \theta$ s.t. \texttt{T$_1 / \theta = $T$_2 / \theta\ \wedge\ $As$_1 / \theta \subseteq $As$_2 / \theta $}
     \end{center}
     %
     \begin{itemize}
@@ -1952,7 +1952,7 @@ Let's recall some important aspects concerning standard internal actions
 
     \begin{alertblock}{Requirements}
         \begin{enumerate}
-            \item $L$ is keeps randomly wandering around the arena
+            \item $L$ it keeps randomly wandering around the arena
             
             \item $R$ keeps wandering around the arena as well, looking for other agents
             %
@@ -2057,7 +2057,7 @@ Let's recall some important aspects concerning standard internal actions
 %/////////
 
 %===============================================================================
-\section{Examples from the \jason{} Book}
+\section[Examples from the \jason{} Book]{Examples from the \jason{} Book\ccite{bordini2007programming}}
 %===============================================================================
 
 \subsection{Fanboy}
