@@ -1,0 +1,11 @@
+MAS helloworld {
+    infrastructure: Centralised
+    
+    environment: 
+        package.of.MyEnvironment(arg1, arg2, ..., argN)
+    
+    agents: 
+        my_agent_name my_agent_file;
+    
+    aslSourcePath: "path/to/asl/";
+}

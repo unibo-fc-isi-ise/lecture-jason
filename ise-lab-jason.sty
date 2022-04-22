@@ -18,3 +18,111 @@
             %    \end{multicols}
     \end{frame}
 }
+
+\newcommand{\tforj}{\tucson{}$4$\jade{}}
+\newcommand{\tforjn}{\tucson{}$4$\jason{}}
+\newcommand{\agentspeak}{{A}gent{S}peak}
+\newcommand{\agentspeakl}{\agentspeak({L})}
+\newcommand{\apice}{{\sf APICe}}
+%\newcommand{\linda}{{\sc{{L}inda}}}
+%\newcommand{\respect}{{\sf{{R}e{S}pec{T}}}}
+%\newcommand{\tucson}{{\sf{{T}u{CS}o{N}}}}
+%\newcommand{\tuprolog}{{{tu}\sf{{P}rolog}}}
+%\newcommand{\aea}{{A\&A}}
+%\newcommand{\aearespect}{\aea{} \respect{}}
+%\newcommand{\cartago}{{\sf {CA}rt{A}g{O}}}
+%\newcommand{\simpa}{{simp{A}}}
+%\newcommand{\jade}{{JADE}}
+%\newcommand{\jadelong}{{\sc J}ava {\sc A}gent {\sc DE}velopment Framework}
+%\newcommand{\wade}{{WADE}}
+%\newcommand{\amuse}{{AMUSE}}
+%\newcommand{\fipa}{{FIPA}}
+%\newcommand{\elda}{{ELDA}}
+%\newcommand{\scala}{{Scala}}
+%\newcommand{\jedi}{{JEDI}}
+%\newcommand{\exat}{{eXAT}}
+%\newcommand{\erlang}{{E}rlang}
+%\newcommand{\jason}{{\bf\it {J}ason}}
+%\newcommand{\gammamodel}{Gamma}
+%\newcommand{\tota}{{TOTA}}
+%\newcommand{\klaim}{{\sc{K}laim}}
+%\newcommand{\stoklaim}{{\sc{S}to{K}laim}}
+%\newcommand{\swarmlinda}{{S}warm{L}inda}
+%\newcommand{\moklong}{{\sc{M}}olecules {\sc{o}}f {\sc{K}}nowledge}
+%\newcommand{\mok}{{\sc MoK}}
+%\newcommand{\moknews}{{\sc MoK}-{\tt News}}
+%\newcommand{\mokf}{$\mathcal{F}_{\mathcal{M}o\mathcal{K}}$}
+%\newcommand{\biopepa}{{BioPEPA}}
+%\newcommand{\pepa}{{PEPA}}
+%\newcommand{\sapere}{{SAPERE}}
+%\newcommand{\cofields}{{Co-fields}}
+%\newcommand{\ulinda}{{\sc uLinda}}
+%\newcommand{\bdi}{{BDI}}
+%\newcommand{\mas}{{MAS}}
+%\newcommand{\prolog}{{P}rolog}
+%\newcommand{\aurora}{{Aurora}}
+%\newcommand{\sicstus}{{SICStus Prolog}}
+%% Operations
+%\newcommand{\lin}{{\tt in}}
+%\newcommand{\lrd}{{\tt rd}}
+%\newcommand{\uin}{\texttt{uin}}
+%\newcommand{\urd}{\texttt{urd}}
+% Code
+\newcommand{\cterm}[1]{{\small \texttt{#1}}}
+\newcommand{\cvar}[1]{{\small \cterm{\textit{#1}}}}
+
+\lstset{
+	showstringspaces=false,
+	basicstyle=\ttfamily\scriptsize,
+	commentstyle={\color{olive}},
+	identifierstyle=\color{black},
+	ndkeywordstyle={\color{blue}},
+	stringstyle={\color{magenta}},
+	emphstyle={},
+	keywordstyle={\color{blue}},
+	breaklines=true,
+	numbers=left,
+	numberstyle=\tiny\color{gray},
+	numbersep=10pt,
+	tabsize=2,
+	extendedchars=true,
+	frame=trBL,
+	frameround=fttt,
+	xleftmargin=6pt
+}
+
+\lstdefinelanguage{Jason}{
+	comment=[l]{//},
+	morecomment=[s]{/*}{*/},
+	emph={},
+	keywords={if,for,true,false,while},
+	keywordstyle = [2]{\textit},
+	keywordstyle = [3]{\color{brown}},
+	keywordstyle = [4]{\color{cyan}},
+	morestring=[b]",
+	morestring=[b]',
+	morestring=[s]{"""*}{*"""},
+	otherkeywords = {.random,.fail,.print,.send,<-,;,:,+!,+?,-!,-?,-+,-,+,!,?,\&,mod,=,<,>},
+	morekeywords = [2]{.print,.send,.random,.fail},
+	morekeywords = [3]{},
+	morekeywords = [4]{<-,:,;,+!,+?,-!,-?,-+,-,+,!,?,\&,mod,=,<,>},
+	sensitive=true
+}
+
+\lstdefinelanguage{Mas2J}{
+	comment=[l]{//},
+	morecomment=[s]{/*}{*/},
+	emph={},
+	keywords={MAS},
+	keywordstyle = [2]{\color{brown}},
+	keywordstyle = [3]{\color{cyan}},
+	keywordstyle = [4]{\textit},
+	morestring=[b]",
+	morestring=[b]',
+	morestring=[s]{"""*}{*"""},
+	otherkeywords = {:,;,\#,infrastructure,environment,agents,aslSourcePath,Centralised},
+	morekeywords = [2]{:,;,\#},
+	morekeywords = [3]{infrastructure,agents,aslSourcePath,environment},
+	morekeywords = [4]{Centralised},
+	sensitive=true
+}
