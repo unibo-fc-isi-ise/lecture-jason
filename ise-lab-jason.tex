@@ -13,8 +13,8 @@
 \usepackage{ise-lab-jason}
 % version
 \newcommand{\versionmajor}{0}
-\newcommand{\versionminor}{1}
-\newcommand{\versionpatch}{4}
+\newcommand{\versionminor}{2}
+\newcommand{\versionpatch}{0}
 \newcommand{\version}{\versionmajor.\versionminor.\versionpatch}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title[\currentLab{} -- \jason{}]{
@@ -64,7 +64,7 @@
         \begin{enumerate}
             \item copying \jason{} jars into some directory of choice
             \item configure the environment variables accordingly
-            \item setup the \jason{} plugin for the Eclipse IDE
+            \item set up the \jason{} plugin for Eclipse IDE
         \end{enumerate}
         
         \vfill
@@ -84,139 +84,136 @@
         \begin{itemize}
             \item we will \emph{not} follow them in the Lab (relying on Gradle instead)
 
-            \item we will \emph{not} rely on Eclipse (we may use Atom instead)
+            \item we will \emph{not} rely on Eclipse (we may use VS Code instead)
         \end{itemize}
     \end{alertblock}
         
 \end{frame}
 %/////////
 
-\subsection{Legacy Installation Instructions}
+\subsection{Official Installation Instructions}
 
 
 %/////////
-\begin{frame}[c]{[Legacy] Get \jason{}}
+\begin{frame}[c, allowframebreaks]{Get \jason{}}
     %
     \begin{enumerate}
         %
         \item go to \jason{} home page
         \begin{center}
-            \uurl{http://jason.sourceforge.net/wp/}
+            \uurl{https://jason-lang.github.io/}
         \end{center}
     
-        \vfill
+        \bigskip
     
-        \item on the right, click on ``DOWNLOAD'' button to go to \jason{} download page, on SourceForge
+        \item look for the ``Download'' section: it should point to GitHub
         \begin{center}
-            \uurl{http://sourceforge.net/projects/jason/files/}
+            \uurl{https://github.com/jason-lang/jason/releases/latest}
         \end{center}
         
-        \vfill
-        
-        \item click on the quick link next to \emph{``Looking for the latest version?''} to obtain \jason{} latest version (currently, \textbf{\jasonversion})
-        %
-    \end{enumerate}
-    %
-\end{frame}
-%/////////
+        \bigskip
 
-%/////////
-\begin{frame}[c]{[Legacy] Install \jason{} I}
-    %
-    \begin{enumerate}
+        \item unpack the downloaded bundle: it should contain a \texttt{bin/} directory with a CLI executable inside it
         %
-        \item \jason{} Comes with its own IDE (jEdit enhanced with \jason{} plugin), but also a Eclipse plugin exists: we will use Eclipse
+        \begin{itemize}
+            \item we are not going to use this directly, but this is the standard way to launch \jason{} MASs
+        \end{itemize}
+
+        %
+        % \item \jason{} Comes with its own IDE (jEdit enhanced with \jason{} plugin), but also a Eclipse plugin exists
+        \item third-party plugins exist for IDE (see next slide)
         
-        \vfill
+        % \bigskip
+
         
-        \item once downloaded \jason{} bundle, unpack it in any directory, position yourself within \jason{} directory, e.g. \texttt{\jasonversion/}
+        % \item once downloaded \jason{} bundle, unpack it in any directory, position yourself within \jason{} directory, e.g. \texttt{\jasonversion/}
         
-        \vfill
+        % \vfill
         
-        \item run \jason{} JAR file in a command prompt, e.g., 
-        \begin{center}
-            \alert{\texttt{java -jar libs/jason-\jasonversion.jar}}
-        \end{center}
+        % \item run \jason{} JAR file in a command prompt, e.g., 
+        % \begin{center}
+        %     \alert{\texttt{java -jar libs/jason-\jasonversion.jar}}
+        % \end{center}
         
-        \vfill
+        % \vfill
         
-        \item a configuration window should pop-up, letting you set up the \jason{} runtime environment properties---e.g., location of \jason{} jar, available distribution infrastructures, etc.: be sure the ``Java Home'' field points to the JVM you want to use
+        % \item a configuration window should pop-up, letting you set up the \jason{} runtime environment properties---e.g., location of \jason{} jar, available distribution infrastructures, etc.: be sure the ``Java Home'' field points to the JVM you want to use
         
     \end{enumerate}
         
 \end{frame}
 %/////////
 
-%/////////
-\begin{frame}[c]{[Legacy] Install \jason{} II}
+% %/////////
+% \begin{frame}[c]{[Legacy] Install \jason{} II}
         
-        \begin{center}
-            \includegraphics[width=.45\linewidth]{./figures/jason_config.png}
-        \end{center}
+%         \begin{center}
+%             \includegraphics[width=.45\linewidth]{./figures/jason_config.png}
+%         \end{center}
         
-\end{frame}
-%/////////
+% \end{frame}
+% %/////////
 
-%/////////
-\begin{frame}[c]{[Legacy] Install \jason{} III}
-        %
-    \begin{enumerate}\setcounter{enumi}{4}
+% %/////////
+% \begin{frame}[c]{[Legacy] Install \jason{} III}
+%         %
+%     \begin{enumerate}\setcounter{enumi}{4}
         
-        \item now open Eclipse and click \alert{``Help $>$ Install New Software\ldots' $>$ Add..''}, then type in the ``Location'' field 
-        \begin{center}
-            \alert{\texttt{http://jason.sourceforge.net/eclipseplugin/juno/}}
-        \end{center}
-        %
-        for Juno or newer \footnote{beware: this version of the plugin only works with Eclipse for Java EE, because reasons (only known to \jason{} dev team :D)}
-        \begin{center}
-            \alert{\texttt{http://jason.sourceforge.net/eclipseplugin/}}
-        \end{center}
-        for Indigo
+%         \item now open Eclipse and click \alert{``Help $>$ Install New Software\ldots' $>$ Add..''}, then type in the ``Location'' field 
+%         \begin{center}
+%             \alert{\texttt{http://jason.sourceforge.net/eclipseplugin/juno/}}
+%         \end{center}
+%         %
+%         for Juno or newer \footnote{beware: this version of the plugin only works with Eclipse for Java EE, because reasons (only known to \jason{} dev team :D)}
+%         \begin{center}
+%             \alert{\texttt{http://jason.sourceforge.net/eclipseplugin/}}
+%         \end{center}
+%         for Indigo
         
-        \vfill
+%         \vfill
     
-        \item click ``Ok'' and wait for the ``\texttt{jasonide}'' feature to appear, then tick the checkbox and step through the installation process (Eclipse restart included)
-        %
-    \end{enumerate}
+%         \item click ``Ok'' and wait for the ``\texttt{jasonide}'' feature to appear, then tick the checkbox and step through the installation process (Eclipse restart included)
+%         %
+%     \end{enumerate}
 
-    \vfill
-    %
-\end{frame}
-%/////////
+%     \vfill
+%     %
+% \end{frame}
+% %/////////
 
 \subsection{IDE Setup}
 
-%/////////
-\begin{frame}[c]{Install and Configure the Atom IDE}
+% %/////////
+% \begin{frame}[c]{Install and Configure the Atom IDE}
     
-    If you care about syntax colouring in \jason{} scripts, you can rely on the Atom IDE
-    %
-    \vfill
-    %
-    \begin{itemize}
-        \item download \& install Atom if not already installed
-        %
-        \begin{center}
-            \uurl{https://atom.io}
-        \end{center}
+%     If you care about syntax colouring in \jason{} scripts, you can rely on the Atom IDE
+%     %
+%     \vfill
+%     %
+%     \begin{itemize}
+%         \item download \& install Atom if not already installed
+%         %
+%         \begin{center}
+%             \uurl{https://atom.io}
+%         \end{center}
         
-        \vfill
+%         \vfill
         
-        \item click on \alert{``File'' menu $>$ ``Settings'' option $>$ ``Install'' section }
+%         \item click on \alert{``File'' menu $>$ ``Settings'' option $>$ ``Install'' section }
         
-        \vfill
+%         \vfill
         
-        \item then search and install the following plugins
-        %
-        \begin{itemize}
-            \item \alert{\texttt{language-agentspeak}} to enable \jason{} syntax colouring
-            \item \alert{\texttt{language-kotlin}} to enable Kotlin syntax colouring (useful for Gradle)
-            \item \alert{\texttt{terminal-tab}} to enable in-IDE consoles (useful for launching Gradle tasks)
-        \end{itemize}
-    \end{itemize}
+%         \item then search and install the following plugins
+%         %
+%         \begin{itemize}
+%             \item \alert{\texttt{language-agentspeak}} to enable \jason{} syntax colouring
+%             \item \alert{\texttt{language-kotlin}} to enable Kotlin syntax colouring (useful for Gradle)
+%             \item \alert{\texttt{terminal-tab}} to enable in-IDE consoles (useful for launching Gradle tasks)
+%         \end{itemize}
+%     \end{itemize}
     
-\end{frame}
-%/////////
+% \end{frame}
+% %/////////
 
 %/////////
 \begin{frame}[c]{Install and Configure the Visual Studio Code IDE}
@@ -234,14 +231,14 @@
         
         \vfill
         
-        \item click on \alert{``File'' menu $>$ ``Preferences'' option $>$ ``Extensions'' entry}
+        \item click on \alert{``Extensions'' entry} on the left
         
         \vfill
         
         \item then search and install the following plugins
         %
         \begin{itemize}
-            \item \alert{\texttt{Kotlin language}} by \texttt{mathiasfrohlich} to enable Kotlin syntax colouring (useful for Gradle) 
+            \item \alert{\texttt{Kotlin}} by \texttt{fwcd} to enable Kotlin syntax colouring (useful for Gradle) 
             \item \alert{\texttt{JaCaMo4Code}} by \texttt{Tabajara Krausburg} to enable \jason{} syntax colouring
             \item \alert{\texttt{Gradle for Java}} by \texttt{Microsoft} for launching Gradle tasks
         \end{itemize}
@@ -258,7 +255,7 @@
         %
         \item clone the following repository into some directory of choice
         \begin{center}
-            \uurl{https://gitlab.com/pika-lab/courses/ise/ay2122/lab-5}
+            \uurl{https://dvcs.apice.unibo.it/pika-lab/courses/ise/ay2324/lab-2}
         \end{center}
     
         \vfill
