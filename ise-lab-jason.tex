@@ -913,10 +913,10 @@ All the examples above are provided as part of the \texttt{:computation} sub-pro
         \item you have already been using some of them, such as
         %
         \begin{itemize}
-            \item \texttt{\alert{.print}/*} | aimed at outputting strings on the console
-            \item \texttt{\alert{.wait}/1} | aimed at waiting a given amount of time (in milleseconds)
-            \item \texttt{\alert{.fail}/0} | provoking the current plan failure
-            \item \texttt{\alert{.random}/1} | retrieving a random number in $\left[ 0, 1 \right[$
+            \item \texttt{\alert{.print}/*} --- aimed at outputting strings on the console
+            \item \texttt{\alert{.wait}/1} --- aimed at waiting a given amount of time (in milleseconds)
+            \item \texttt{\alert{.fail}/0} --- provoking the current plan failure
+            \item \texttt{\alert{.random}/1} --- retrieving a random number in $\left[ 0, 1 \right[$
         \end{itemize}
         
         \vspace{.3cm}
@@ -926,7 +926,7 @@ All the examples above are provided as part of the \texttt{:computation} sub-pro
         These are described at
         %
         \begin{center}
-            \uurl{http://jason.sourceforge.net/api/jason/stdlib/package-summary.html}
+            \uurl{https://jason-lang.github.io/api/jason/stdlib/package-summary.html}
         \end{center}
     
         \vspace{.3cm}
@@ -1115,7 +1115,7 @@ Let's recall some important aspects concerning standard internal actions
     \item the \texttt{.send/3} and \texttt{.send/5} internal actions are the basic bricks of point-to-point interactions in \jason{}
     %
     \begin{itemize}
-        \item \uurl{http://jason.sourceforge.net/api/jason/stdlib/send.html}
+        \item \uurl{https://jason-lang.github.io/api/jason/stdlib/send.html}
     \end{itemize}
 \end{itemize}
 
@@ -1135,7 +1135,7 @@ Let's recall some important aspects concerning standard internal actions
     \item the \texttt{.broadcast/2} internal action is the next mechanism for interaction in \jason{}
     %
     \begin{itemize}
-        \item \uurl{http://jason.sourceforge.net/api/jason/stdlib/broadcast.html}
+        \item \uurl{https://jason-lang.github.io/api/jason/stdlib/broadcast.html}
     \end{itemize}
 \end{itemize}
 
@@ -1181,7 +1181,7 @@ Let's recall some important aspects concerning standard internal actions
     \item the \texttt{.wait} internal action has actually several intended uses cases
     %
     \begin{itemize}
-        \item \uurl{http://jason.sourceforge.net/api/jason/stdlib/wait.html}
+        \item \uurl{https://jason-lang.github.io/api/jason/stdlib/wait.html}
     \end{itemize}
 \end{itemize}
 
@@ -1667,7 +1667,7 @@ Let's recall some important aspects concerning standard internal actions
 \subsubsection{Agents Actuation}
 
 %/////////
-\begin{frame}[c]{Perception through Automatic Belief Updates}
+\begin{frame}[c]{Actuation through the Environment}
     
     \begin{itemize}
         \item MAS are composed by (at least) two abstractions: agents and the \alert{environment}
@@ -1767,9 +1767,9 @@ Let's recall some important aspects concerning standard internal actions
         \item the \texttt{jason.environment.\alert{Environment}} class comes with some utility methods for agents' life cycle and belief base management, plus 3 main \alert{callbacks} to be overridden by developers
         %
         \begin{itemize}
-            \item \lstinline[language=Java]{void init(String[] args)} | which is invoked once, upon MAS initialization
-            \item \lstinline[language=Java]{boolean executeAction(String agentName, Structure actionTerm)} | which is invoked whenever the agent named \texttt{agentName} performs the action represented by \texttt{actionTerm}
-            \item \lstinline[language=Java]{Collection<Literal> getPercepts(String agentName)} | which is invoked whenever the agent named \texttt{agentName} observes the environment
+            \item \lstinline[language=Java]{void init(String[] args)} --- which is invoked once, upon MAS initialization
+            \item \lstinline[language=Java]{boolean executeAction(String agentName, Structure actionTerm)} --- which is invoked whenever the agent named \texttt{agentName} performs the action represented by \texttt{actionTerm}
+            \item \lstinline[language=Java]{Collection<Literal> getPercepts(String agentName)} --- which is invoked whenever the agent named \texttt{agentName} observes the environment
         \end{itemize}
     
         \framebreak
@@ -1811,8 +1811,8 @@ Let's recall some important aspects concerning standard internal actions
     Thus, the thermostat agent can perform 2 sorts of actions
     %
     \begin{itemize}
-        \item \lstinline[language=Jason]{spray_air(hot)} | which increases the temperature
-        \item \lstinline[language=Jason]{spray_air(cold)} | which decreases the temperature
+        \item \lstinline[language=Jason]{spray_air(hot)} --- which increases the temperature
+        \item \lstinline[language=Jason]{spray_air(cold)} --- which decreases the temperature
     \end{itemize}
     
     \vspace{.3cm}
@@ -1929,7 +1929,7 @@ Let's recall some important aspects concerning standard internal actions
             \item robots are only allowed to send messages to each other if they are \alert{close} to each others, i.e. iff
             %
             \begin{center}
-                $|x_R - x_L| \leq 1 \wedge |y_R - y_L| \leq 1$
+                $---x_R - x_L--- \leq 1 \wedge ---y_R - y_L--- \leq 1$
             \end{center} 
             %
             (where $(x_R, y_R)$ and $(x_L, y_L)$ are $R$ and $L$ \alert{absolute} positions, respectively)
@@ -2171,10 +2171,10 @@ Let's recall some important aspects concerning standard internal actions
             \item the phone is shared by \alert{\texttt{fanboy}} and its \alert{\texttt{mum}}: they may compete for using the phone
             \item \texttt{mum} simply randomly tries to use the phone to call her friends \begin{itemize}
                 \item when she gets the phone she keeps talking for a while
-                \item \uurl{http://jason.sourceforge.net/api/jason/stdlib/random.html}
+                \item \uurl{https://jason-lang.github.io/api/jason/stdlib/random.html}
             \end{itemize}
             \item every agent getting the phone must first of all inform the other one that the phone is busy \begin{itemize}
-                \item \uurl{http://jason.sourceforge.net/api/jason/stdlib/send.html}
+                \item \uurl{https://jason-lang.github.io/api/jason/stdlib/send.html}
             \end{itemize}
             \item every agent must inform the other one that the phone is not busy anymore when it ends the call
             \item every agent must wait for the phone to be free in case it is needed
