@@ -1635,7 +1635,7 @@ Let's recall some important aspects concerning standard internal actions
 %/////////
 \begin{frame}[c]{The two sides of perception}
     
-    \begin{block}{Percepts from the \aalert{agent} point of view}
+    \begin{block}{Percepts from the \textbf{agent} point of view}
         \begin{itemize}
             \item each agent must simply \alert{assume} percepts in its belief base to be \alert{cosistent} with the environment
             \item each agent may intercept percepts \alert{variations} through \textit{ad-hoc} plans
@@ -1649,7 +1649,7 @@ Let's recall some important aspects concerning standard internal actions
     
     \vfill
     
-    \begin{block}{Percepts from the \aalert{environment} point of view}
+    \begin{block}{Percepts from the \textbf{environment} point of view}
         \begin{itemize}
             \item each environment (also) has the \alert{responsibility} of tracking: 
             %
@@ -1667,7 +1667,7 @@ Let's recall some important aspects concerning standard internal actions
 \subsubsection{Agents Actuation}
 
 %/////////
-\begin{frame}[c]{Actuation through the Environment}
+\begin{frame}[c]{Actuation through Action Expressions}
     
     \begin{itemize}
         \item MAS are composed by (at least) two abstractions: agents and the \alert{environment}
@@ -1706,7 +1706,7 @@ Let's recall some important aspects concerning standard internal actions
 %/////////
 \begin{frame}[c,allowframebreaks]{The Two Sides of Actuation}
     
-    \begin{block}{Actions from the \aalert{agent} point of view}
+    \begin{block}{Actions from the \textbf{agent} point of view}
         \begin{itemize}
             \item each agent simply \alert{assumes} some actions are available for it to use
             %
@@ -1733,7 +1733,7 @@ Let's recall some important aspects concerning standard internal actions
     
     \framebreak
     
-    \begin{block}{Percepts from the \textbf{environment} point of view}
+    \begin{block}{Actions from the \textbf{environment} point of view}
         \begin{itemize}
             \item each environment (also) has the \alert{responsibility} of exposing 
             %
@@ -1929,7 +1929,7 @@ Let's recall some important aspects concerning standard internal actions
             \item robots are only allowed to send messages to each other if they are \alert{close} to each others, i.e. iff
             %
             \begin{center}
-                $---x_R - x_L--- \leq 1 \wedge ---y_R - y_L--- \leq 1$
+                $|x_R - x_L| \leq 1 \wedge |y_R - y_L| \leq 1$
             \end{center} 
             %
             (where $(x_R, y_R)$ and $(x_L, y_L)$ are $R$ and $L$ \alert{absolute} positions, respectively)
