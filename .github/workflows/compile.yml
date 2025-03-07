@@ -1,49 +1,28 @@
-name: compile
+name: Build LaTeX and deploy on GitHub Releases
 on:
   push:
-    branches:
-      - main
-      - master
-env:
-  LATEX_ROOT: ise-lab-jason
-jobs:
-  compile:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-        with:
-          submodules: recursive
-          
-      - name: Build latex
-        uses: xu-cheng/latex-action@v2
-        with:
-          root_file: ${{ env.LATEX_ROOT }}.tex
-          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode -shell-escape
-          
-      - name: Get Version
-        id: get-version
-        run: echo "::set-output name=version::$(cat *.tex | python .github/scripts/compute-version.py)"
+    tags: '*'
+    branches-ignore:
+      - 'autodelivery**'
+      - 'bump-**'
+      - 'renovate/**'
+    paths-ignore:
+      - 'README.md'
+      - 'CHANGELOG.md'
+      - 'LICENSE'
+      - 'renovate.json'
+  pull_request:
+  workflow_dispatch:
 
-      - name: Get Time
-        id: current-time
-        run: echo "::set-output name=time::$(date +'%Y-%m-%d-%H-%M')"
-        
-      - name: Create Release
-        id: create-release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+permissions: { }
+
+jobs:
+  success:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: DanySK/compile-and-publish-all-latex@2.0.28
         with:
-          tag_name: '${{ steps.get-version.outputs.version }}+${{ steps.current-time.outputs.time }}'
-          
-      - name: Upload Release Asset
-        id: upload-release-asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create-release.outputs.upload_url }}
-          asset_path: ./${{ env.LATEX_ROOT }}.pdf
-          asset_name: ${{ env.LATEX_ROOT }}-${{ steps.get-version.outputs.version }}+${{ steps.current-time.outputs.time }}.pdf
-          asset_content_type: application/pdf
+          token: ${{ secrets.GITHUB_TOKEN }}
+  
