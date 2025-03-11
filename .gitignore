@@ -1,3 +1,5 @@
+*.rubbercache
+
 ise-lab-jason.pdf
 
 ## Core latex/pdflatex auxiliary files:
