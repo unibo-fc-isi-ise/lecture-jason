@@ -26,4 +26,7 @@ jobs:
       - uses: DanySK/compile-and-publish-all-latex@2.0.28
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-  
+      - if: always()
+        shell: bash
+        run: |
+          ls -la
